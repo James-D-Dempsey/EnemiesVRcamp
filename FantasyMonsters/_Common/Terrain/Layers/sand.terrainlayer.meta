@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7400524152c4ae84896438cc22443e53
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8574412962073106934
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 173819
+  packageName: Medieval Fantasy - All Monsters
+  packageVersion: 1.3
+  assetPath: Assets/MedievalFantasy/_Common/Terrain/Layers/sand.terrainlayer
+  uploadId: 469266

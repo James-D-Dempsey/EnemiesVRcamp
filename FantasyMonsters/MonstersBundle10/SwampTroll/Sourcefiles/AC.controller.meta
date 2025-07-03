@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b232598cd2d41d64fa9b9935cf9151f2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 173819
+  packageName: Medieval Fantasy - All Monsters
+  packageVersion: 1.3
+  assetPath: Assets/MedievalFantasy/MonstersBundle10/SwampTroll/Sourcefiles/AC.controller
+  uploadId: 469266

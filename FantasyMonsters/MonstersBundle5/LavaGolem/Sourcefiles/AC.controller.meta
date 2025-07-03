@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fe4d95561994f4645860d523f86b5eb0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 173819
+  packageName: Medieval Fantasy - All Monsters
+  packageVersion: 1.3
+  assetPath: Assets/MedievalFantasy/MonstersBundle5/LavaGolem/Sourcefiles/AC.controller
+  uploadId: 469266
