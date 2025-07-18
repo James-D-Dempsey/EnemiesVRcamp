@@ -53,7 +53,7 @@ public class VREnemyMelee : MonoBehaviour
 
     void Update()
     {
-        
+
         // if we’re dead, bail out
         if (!Alive) return;
 
@@ -112,6 +112,12 @@ public class VREnemyMelee : MonoBehaviour
         if (sfxSource != null && deathClip != null)
         {
             sfxSource.PlayOneShot(deathClip);
+        }
+
+        if (gameObject.name == "chomper_body")
+        {
+            Destroy(gameObject);
+            return;
         }
 
         Destroy(gameObject, 15f);

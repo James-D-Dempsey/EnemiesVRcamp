@@ -1880,6 +1880,18 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1177220333}
+    - target: {fileID: 4707772489564362999, guid: 80d8bc0f32ea0eb498cbd4d4a4b83f43, type: 3}
+      propertyPath: walkClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cb3acdaa034565141aabbdc1d6dd2b94, type: 3}
+    - target: {fileID: 4707772489564362999, guid: 80d8bc0f32ea0eb498cbd4d4a4b83f43, type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a06f41a3035d19841b1edf81d24a61c9, type: 3}
+    - target: {fileID: 4707772489564362999, guid: 80d8bc0f32ea0eb498cbd4d4a4b83f43, type: 3}
+      propertyPath: attackClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 06c383fd7a0cd5d4797c30ceca451f94, type: 3}
     - target: {fileID: 5464790783187475517, guid: 80d8bc0f32ea0eb498cbd4d4a4b83f43, type: 3}
       propertyPath: m_Name
       value: Chomper
