@@ -32,10 +32,6 @@ public class VREnemyMelee : MonoBehaviour
     private AudioSource sfxSource;   // for one‑shots
     private AudioSource loopSource;  // optional, for walking loop
 
-    [Header("Damage Popup")]
-    public GameObject damagePopupPrefab;  // assign your Canvas+Text prefab
-    private Vector3 popupOffset = new Vector3(0, 2f, 0);
-
     void Start()
     {
         m_Agent = GetComponent<NavMeshAgent>();
@@ -102,8 +98,6 @@ public class VREnemyMelee : MonoBehaviour
 
         currentHealth -= amount;
 
-        Vector3 worldPos = transform.position + popupOffset;
-        DamagePopup.Create(damagePopupPrefab, worldPos, Mathf.CeilToInt(amount).ToString());
 
         if (currentHealth <= 0f)
             Die();
@@ -114,7 +108,12 @@ public class VREnemyMelee : MonoBehaviour
         Alive = false;                   // flips the Inspector bool
         m_Agent.isStopped = true;        // freeze movement
         m_Animator.SetBool("Alive", false); // trigger the Death transition
-        sfxSource.PlayOneShot(deathClip);
+
+        if (sfxSource != null && deathClip != null)
+        {
+            sfxSource.PlayOneShot(deathClip);
+        }
+
         Destroy(gameObject, 15f);
     }
 }
