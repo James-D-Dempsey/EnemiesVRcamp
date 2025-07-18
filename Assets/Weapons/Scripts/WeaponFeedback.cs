@@ -28,6 +28,14 @@ public class WeaponFeedback : MonoBehaviour
             }
         }
 
+        // Actually deal damage to the monster
+        VREnemyMelee enemy = other.GetComponent<VREnemyMelee>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damageAmount);
+            Debug.Log($"Applied {damageAmount} damage to {enemy.name}");
+        }
+
         // Register the hit time
         lastHitTimes[other] = currentTime;
 
