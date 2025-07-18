@@ -1,24 +1,35 @@
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections; 
 
 public class VRPlayer : MonoBehaviour
 {
-    public float maxHealth = 100f;
-    private float currentHealth;
+    public HealthData healthData;
     private bool isDead = false;
-
+    public Transform respawnPoint;
+    public float respawnDelay = 2f;
     void Start()
     {
-        currentHealth = maxHealth;
+        isDead = false;
+
+        if (healthData != null)
+        {
+            healthData.ResetHealth();
+            Debug.Log($"[VRPlayer] Health reset to {healthData.currentHealth}");
+        }
+        else
+        {
+            Debug.LogError("[VRPlayer] No HealthData ScriptableObject assigned!");
+        }
     }
 
     public void TakeDamage(float amount)
     {
-        if (isDead) return;
+        if (isDead || healthData == null || healthData.IsDead()) return;
 
-        currentHealth -= amount;
-        Debug.Log($"Player took {amount} damage. Current health: {currentHealth}");
+        healthData.TakeDamage(amount);
+        Debug.Log($"Player took {amount} damage. Current health: {healthData.currentHealth}");
 
-        if (currentHealth <= 0f)
+        if (healthData.IsDead())
         {
             Die();
         }
@@ -28,12 +39,32 @@ public class VRPlayer : MonoBehaviour
     {
         isDead = true;
         Debug.Log("Player has died.");
-        // Add death logic here: game over screen, respawn, etc.
+
+        StartCoroutine(Respawn());
+    }
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(respawnDelay);
+
+        if (healthData != null)
+        {
+            healthData.ResetHealth();
+        }
+
+        if (respawnPoint != null)
+        {
+            transform.position = respawnPoint.position;
+            transform.rotation = respawnPoint.rotation; // optional
+        }
+
+        isDead = false;
+
+        Debug.Log("Player respawned.");
     }
 
     public float GetCurrentHealth()
     {
-        return currentHealth;
+        return healthData != null ? healthData.currentHealth : 0f;
     }
 
     public bool IsDead()
